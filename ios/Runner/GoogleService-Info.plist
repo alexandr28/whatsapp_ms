@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>300001710132-3thjp1bjc39voi124c2a941mampehkca.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.300001710132-3thjp1bjc39voi124c2a941mampehkca</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>300001710132-9me1uan9u60c25rpmlgahhpb4eogr08u.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAqChga7KwYivi_bOUtMVt_7NwBt_8pVRs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>300001710132</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>acampdev.whatsapp-ms</string>
+	<key>PROJECT_ID</key>
+	<string>messenger-f7e85</string>
+	<key>STORAGE_BUCKET</key>
+	<string>messenger-f7e85.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:300001710132:ios:16280bead9b70bfe</string>
+	<key>DATABASE_URL</key>
+	<string>https://messenger-f7e85.firebaseio.com</string>
+</dict>
+</plist>

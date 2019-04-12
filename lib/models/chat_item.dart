@@ -14,10 +14,10 @@ class ChatItem{
   bool get haveUnreadMessage=> unreadMessage!=0;
   factory ChatItem.fromJson(Map<String, dynamic> json){
     return ChatItem(
-      message: json["message"],
-      dateTime: DateTime.fromMicrosecondsSinceEpoch(json["dateTime"]),
-      name: json["name"],
-      avatarUrl: json["avatarUrl"],
+      message: json["message"]??"",
+      dateTime: DateTime.fromMicrosecondsSinceEpoch(json["dateTime"].seconds),
+      name: json["name"]??"",
+      avatarUrl: json["avatarUrl"]??"",
     );
   }
 }

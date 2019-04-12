@@ -1,11 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_ms/views/widgets/chat_item_widget.dart';
 import 'package:whatsapp_ms/models/chat_item.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 class ChatListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
+    return StreamBuilder<QuerySnapshot>(
+      stream: Firestore.instance.collection("messages").snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+        if(snapshot.hasError){
+          return Text("Error cargando mensajes");
+        }
+        switch(snapshot.connectionState){
+          case  ConnectionState.waiting:
+            return Center(child:CircularProgressIndicator(),);
+            break;
+          default:
+            return ListView.builder(
+                itemCount: snapshot.data.documents.length,
+              itemBuilder: (BuildContext context, int position){
+                  return Column(
+                    children: <Widget>[
+                      ChatItemWidget(
+                        chatItem:ChatItem.fromJson(snapshot.data.documents[position].data),
+                      ),
+                      Divider(height: 10.0,),
+                    ],
+                  );
+              },
+            );
+            break;
+        }
+      },
+    );
+    /*
     return ListView.builder(
         itemCount: chatItems.length,
         itemBuilder: (BuildContext context, int position){
@@ -15,7 +43,7 @@ class ChatListWidget extends StatelessWidget {
               Divider(height: 10.0,)
             ],
           );
-        });
+        });*/
   }
 }
 

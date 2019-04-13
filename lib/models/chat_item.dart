@@ -17,11 +17,17 @@ class ChatItem{
     this.owner,
     this.checked=CheckStatus.uncheck
   });
+
   String get lastMessageTime => "${dateTime.hour}:${dateTime.minute}";
   String get shortMessage=> message.length>30?"${message.substring(0,30)}...":message;
   int get unreadMessageCount => unreadMessage>99?99:unreadMessage;
   bool get haveUnreadMessage=> unreadMessage!=0;
+
   factory ChatItem.fromJson(Map<String, dynamic> json){
+    int seconds=0;
+    if(json["dateTime"]!=null){
+      seconds=json["dateTime"].seconds;
+    }
     return ChatItem(
       message: json["message"]??"",
       dateTime: DateTime.fromMicrosecondsSinceEpoch(json["dateTime"].seconds),

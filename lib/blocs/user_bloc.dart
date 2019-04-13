@@ -10,7 +10,7 @@ enum UserEvent{
 class UserBloc extends Bloc<UserEvent,User>{
   @override
   // TODO: implement initialState
-  User get initialState => User(event:UserEvent.none);
+  get initialState => User(event:UserEvent.none);
 
   @override
   Stream<User> mapEventToState(UserEvent event)async*{

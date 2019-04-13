@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import 'views/whatsapp_home.dart';
-import 'package:camera/camera.dart';
-import 'dart:async';
 import 'views/login_widget.dart';
-/*
-List<CameraDescription> cameras;
-Future<Null>  main()async {
-  cameras=await availableCameras();
-  runApp(MyApp());
-}*/
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'blocs/user_bloc.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  UserBloc userBloc= UserBloc();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: new Color(0xff075E54),
-        accentColor: new Color(0xff25D366),
+    return BlocProvider<UserBloc>(
+      bloc: userBloc,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: new Color(0xff075E54),
+          accentColor: new Color(0xff25D366),
+        ),
+        home: LoginWidget(),
       ),
-      //home: Whatsapp(cameras),
-      home: LoginWidget(),
     );
   }
 }

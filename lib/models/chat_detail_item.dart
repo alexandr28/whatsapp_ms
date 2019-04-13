@@ -9,17 +9,17 @@ class ChatDetailItem{
   final bool isMine;
   final String phoneNumber;
 
-  ChatDetailItem(
-      this.avatarUrl,
-      this.name,
-      this.message,
-      this.dateTime,
-      this.readMessage,
-      this.isMine,
-      this.phoneNumber,
-      );
+  ChatDetailItem({
+    this.avatarUrl,
+    this.name,
+    this.message,
+    this.dateTime,
+    this.readMessage=false,
+    this.isMine,
+    this.phoneNumber="",
+  });
   String get lastMessageTime => "${dateTime.hour}:${dateTime.minute}";
-/*
+
   factory ChatDetailItem.fromJson(Map<String, dynamic> json){
     int seconds =0;
     if(json["datetime"]!=null){
@@ -31,6 +31,6 @@ class ChatDetailItem{
       name: json["name"]??"",
       avatarUrl: json["avatarUrl"] ?? "",
     );
-  }*/
+  }
 }
 
